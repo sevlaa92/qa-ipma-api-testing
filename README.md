@@ -45,10 +45,14 @@ Base URL: https://api.ipma.pt
 qa-ipma-api-testing/
 │
 ├── README.md
-├── IPMA_Postman_Collection.json
-├── Test_Plan.md
-├── Test_Cases.md
-└── Bug_Report.md
+│
+├── docs/
+│ ├── Test_Plan.md
+│ ├── Test_Cases.md
+│ └── Bug_Report.md
+│
+└── postman/
+└── IPMA_Postman_Collection.json
 
 
 ---
