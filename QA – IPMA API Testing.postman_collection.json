@@ -1,0 +1,148 @@
+{
+  "info": {
+    "_postman_id": "d4fe5a3c-25c6-42a9-bc97-f6ed20f29abe",
+    "name": "QA – IPMA API Testing",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "47152680",
+    "_collection_link": "https://go.postman.co/collection/47152680-d4fe5a3c-25c6-42a9-bc97-f6ed20f29abe?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Lista de Localidades",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code é 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"Resposta está em formato JSON\", function () {",
+              "    pm.response.to.be.json;",
+              "});",
+              "",
+              "pm.test(\"Campo data existe na resposta\", function () {",
+              "    const response = pm.response.json();",
+              "    pm.expect(response).to.have.property(\"data\");",
+              "});",
+              "",
+              "pm.test(\"Lista de distritos não está vazia\", function () {",
+              "    const response = pm.response.json();",
+              "    pm.expect(response.data.length).to.be.above(0);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"owner\": \"IPMA\",\n    \"country\": \"PT\",\n    \"data\": [\n        {\n            \"idRegiao\": 1,\n            \"idAreaAviso\": \"AVR\",\n            \"idConcelho\": 5,\n            \"globalIdLocal\": 1010500,\n            \"latitude\": \"40.6413\",\n            \"idDistrito\": 1,\n            \"local\": \"Aveiro\",\n            \"longitude\": \"-8.6535\"\n        },\n        {\n            \"idRegiao\": 1,\n            \"idAreaAviso\": \"BJA\",\n            \"idConcelho\": 5,\n            \"globalIdLocal\": 1020500,\n            \"latitude\": \"38.0200\",\n            \"idDistrito\": 2,\n            \"local\": \"Beja\",\n            \"longitude\": \"-7.8700\"\n        },\n        {\n            \"idRegiao\": 1,\n            \"idAreaAviso\": \"BRG\",\n            \"idConcelho\": 3,\n            \"globalIdLocal\": 1030300,\n            \"latitude\": \"41.5475\",\n            \"idDistrito\": 3,\n            \"local\": \"Braga\",\n            \"longitude\": \"-8.4227\"\n        },\n        {\n\n            \"idRegiao\": 1,\n            \"idAreaAviso\": \"BRG\",\n            \"globalIdLocal\": 1030800,\n            \"idConcelho\": 8,\n            \"latitude\": \"41.4434\",\n            \"idDistrito\": 3,\n            \"local\": \"Guimarães\",\n            \"longitude\": \"-8.2938\"\n        \n        },\n        {\n            \"idRegiao\": 1,\n            \"idAreaAviso\": \"BGC\",\n            \"idConcelho\": 2,\n            \"globalIdLocal\": 1040200,\n            \"latitude\": \"41.8076\",\n            \"idDistrito\": 4,\n            \"local\": \"Bragan\\u00e7a\",\n            \"longitude\": \"-6.7606\"\n        },\n        {\n            \"idRegiao\": 1,\n            \"idAreaAviso\": \"CBO\",\n            \"idConcelho\": 2,\n            \"globalIdLocal\": 1050200,\n            \"latitude\": \"39.8217\",\n            \"idDistrito\": 5,\n            \"local\": \"Castelo Branco\",\n            \"longitude\": \"-7.4957\"\n        },\n        {\n            \"idRegiao\": 1,\n            \"idAreaAviso\": \"CBR\",\n            \"idConcelho\": 3,\n            \"globalIdLocal\": 1060300,\n            \"latitude\": \"40.2081\",\n            \"idDistrito\": 6,\n            \"local\": \"Coimbra\",\n            \"longitude\": \"-8.4194\"\n        },\n        {\n            \"idRegiao\": 1,\n            \"idAreaAviso\": \"EVR\",\n            \"idConcelho\": 5,\n            \"globalIdLocal\": 1070500,\n            \"latitude\": \"38.5701\",\n            \"idDistrito\": 7,\n            \"local\": \"\\u00c9vora\",\n            \"longitude\": \"-7.9104\"\n        },\n        {\n            \"idRegiao\": 1,\n            \"idAreaAviso\": \"FAR\",\n            \"idConcelho\": 5,\n            \"globalIdLocal\": 1080500,\n            \"latitude\": \"37.0146\",\n            \"idDistrito\": 8,\n            \"local\": \"Faro\",\n            \"longitude\": \"-7.9331\"\n        },\n        {\n        \n            \"idRegiao\": 1,\n            \"idAreaAviso\": \"FAR\",\n            \"globalIdLocal\": 1081505,\n            \"idConcelho\": 15,\n            \"latitude\": \"37.0168\",\n            \"idDistrito\": 8,\n            \"local\": \"Sagres\",\n            \"longitude\": \"-8.9403\"\n        \n        },\n        {\n\n            \"idRegiao\": 1,\n            \"idAreaAviso\": \"FAR\",\n            \"globalIdLocal\": 1081100,\n            \"idConcelho\": 11,\n            \"latitude\": \"37.1500\",\n            \"idDistrito\": 8,\n            \"local\": \"Portimão\",\n            \"longitude\": \"-8.5200\"\n        \n        },\n        {\n\n            \"idRegiao\": 1,\n            \"idAreaAviso\": \"FAR\",\n            \"globalIdLocal\": 1080800,\n            \"idConcelho\": 8,\n            \"latitude\": \"37.1397\",\n            \"idDistrito\": 8,\n            \"local\": \"Loulé\",\n            \"longitude\": \"-8.0202\"\n        \n        },\n        {\n            \"idRegiao\": 1,\n            \"idAreaAviso\": \"GDA\",\n            \"idConcelho\": 7,\n            \"globalIdLocal\": 1090700,\n            \"latitude\": \"40.5379\",\n            \"idDistrito\": 9,\n            \"local\": \"Guarda\",\n            \"longitude\": \"-7.2647\"\n        },\n        {\n\n            \"idRegiao\": 1,\n            \"idAreaAviso\": \"GDA\",\n            \"globalIdLocal\": 1090821,\n            \"idConcelho\": 8,\n            \"latitude\": \"40.4075\",\n            \"idDistrito\": 9,\n            \"local\": \"Penhas Douradas\",\n            \"longitude\": \"-7.5665\"\n        \n        },\n        {\n            \"idRegiao\": 1,\n            \"idAreaAviso\": \"LRA\",\n            \"idConcelho\": 9,\n            \"globalIdLocal\": 1100900,\n            \"latitude\": \"39.7473\",\n            \"idDistrito\": 10,\n            \"local\": \"Leiria\",\n            \"longitude\": \"-8.8069\"\n        },\n        {\n            \"idRegiao\": 1,\n            \"idAreaAviso\": \"LSB\",\n            \"idConcelho\": 6,\n            \"globalIdLocal\": 1110600,\n            \"latitude\": \"38.7660\",\n            \"idDistrito\": 11,\n            \"local\": \"Lisboa\",\n            \"longitude\": \"-9.1286\"\n        },\n        {\n            \"idRegiao\": 1,\n            \"idAreaAviso\": \"PTG\",\n            \"idConcelho\": 14,\n            \"globalIdLocal\": 1121400,\n            \"latitude\": \"39.2900\",\n            \"idDistrito\": 12,\n            \"local\": \"Portalegre\",\n            \"longitude\": \"-7.4200\"\n        },\n        {\n            \"idRegiao\": 1,\n            \"idAreaAviso\": \"PTO\",\n            \"idConcelho\": 12,\n            \"globalIdLocal\": 1131200,\n            \"latitude\": \"41.1580\",\n            \"idDistrito\": 13,\n            \"local\": \"Porto\",\n            \"longitude\": \"-8.6294\"\n        },\n        {\n            \"idRegiao\": 1,\n            \"idAreaAviso\": \"STM\",\n            \"idConcelho\": 16,\n            \"globalIdLocal\": 1141600,\n            \"latitude\": \"39.2000\",\n            \"idDistrito\": 14,\n            \"local\": \"Santar\\u00e9m\",\n            \"longitude\": \"-8.7400\"\n        },\n        {\n            \"idRegiao\": 1,\n            \"idAreaAviso\": \"STB\",\n            \"idConcelho\": 12,\n            \"globalIdLocal\": 1151200,\n            \"latitude\": \"38.5246\",\n            \"idDistrito\": 15,\n            \"local\": \"Set\\u00fabal\",\n            \"longitude\": \"-8.8856\"\n        },\n        {\n\n            \"idRegiao\": 1,\n            \"idAreaAviso\": \"STB\",\n            \"globalIdLocal\": 1151300,\n            \"idConcelho\": 13,\n            \"latitude\": \"37.9560\",\n            \"idDistrito\": 15,\n            \"local\": \"Sines\",\n            \"longitude\": \"-8.8643\"\n        \n        },\n        {\n            \"idRegiao\": 1,\n            \"idAreaAviso\": \"VCT\",\n            \"idConcelho\": 9,\n            \"globalIdLocal\": 1160900,\n            \"latitude\": \"41.6952\",\n            \"idDistrito\": 16,\n            \"local\": \"Viana do Castelo\",\n            \"longitude\": \"-8.8365\"\n        },\n        {\n            \"idRegiao\": 1,\n            \"idAreaAviso\": \"VRL\",\n            \"idConcelho\": 14,\n            \"globalIdLocal\": 1171400,\n            \"latitude\": \"41.3053\",\n            \"idDistrito\": 17,\n            \"local\": \"Vila Real\",\n            \"longitude\": \"-7.7440\"\n        },\n        {\n            \"idRegiao\": 1,\n            \"idAreaAviso\": \"VIS\",\n            \"idConcelho\": 23,\n            \"globalIdLocal\": 1182300,\n            \"latitude\": \"40.6585\",\n            \"idDistrito\": 18,\n            \"local\": \"Viseu\",\n            \"longitude\": \"-7.9120\"\n        },\n        {\n            \"idRegiao\": 2,\n            \"idAreaAviso\": \"MCS\",\n            \"idConcelho\": 3,\n            \"globalIdLocal\": 2310300,\n            \"latitude\": \"32.6485\",\n            \"idDistrito\": 31,\n            \"local\": \"Funchal\",\n            \"longitude\": \"-16.9084\"\n        },\n        {\n            \"idRegiao\": 2,\n            \"idAreaAviso\": \"MPS\",\n            \"idConcelho\": 1,\n            \"globalIdLocal\": 2320100,\n            \"latitude\": \"33.0700\",\n            \"idDistrito\": 32,\n            \"local\": \"Porto Santo\",\n            \"longitude\": \"-16.3400\"\n        },\n        {\n            \"idRegiao\": 3,\n            \"idAreaAviso\": \"AOR\",\n            \"idConcelho\": 1,\n            \"globalIdLocal\": 3410100,\n            \"latitude\": \"36.9563\",\n            \"idDistrito\": 41,\n            \"local\": \"Vila do Porto\",\n            \"longitude\": \"-25.1409\"\n        },\n        {\n            \"idRegiao\": 3,\n            \"idAreaAviso\": \"AOR\",\n            \"idConcelho\": 3,\n            \"globalIdLocal\": 3420300,\n            \"latitude\": \"37.7415\",\n            \"idDistrito\": 42,\n            \"local\": \"Ponta Delgada\",\n            \"longitude\": \"-25.6677\"\n        },\n        {\n            \"idRegiao\": 3,\n            \"idAreaAviso\": \"ACE\",\n            \"idConcelho\": 1,\n            \"globalIdLocal\": 3430100,\n            \"latitude\": \"38.6700\",\n            \"idDistrito\": 43,\n            \"local\": \"Angra do Hero\\u00edsmo\",\n            \"longitude\": \"-27.2200\"\n        },\n        {\n            \"idRegiao\": 3,\n            \"idAreaAviso\": \"ACE\",\n            \"idConcelho\": 1,\n            \"globalIdLocal\": 3440100,\n            \"latitude\": \"39.0800\",\n            \"idDistrito\": 44,\n            \"local\": \"Santa Cruz da Graciosa\",\n            \"longitude\": \"-28.0000\"\n        },\n        {\n            \"idRegiao\": 3,\n            \"idAreaAviso\": \"ACE\",\n            \"idConcelho\": 2,\n            \"globalIdLocal\": 3450200,\n            \"latitude\": \"38.6842\",\n            \"idDistrito\": 45,\n            \"local\": \"Velas\",\n            \"longitude\": \"-28.2133\"\n        },\n        {\n            \"idRegiao\": 3,\n            \"idAreaAviso\": \"ACE\",\n            \"idConcelho\": 2,\n            \"globalIdLocal\": 3460200,\n            \"latitude\": \"38.5325\",\n            \"idDistrito\": 46,\n            \"local\": \"Madalena\",\n            \"longitude\": \"-28.5237\"\n        },\n        {\n            \"idRegiao\": 3,\n            \"idAreaAviso\": \"ACE\",\n            \"idConcelho\": 1,\n            \"globalIdLocal\": 3470100,\n            \"latitude\": \"38.5363\",\n            \"idDistrito\": 47,\n            \"local\": \"Horta\",\n            \"longitude\": \"-28.6315\"\n        },\n        {\n            \"idRegiao\": 3,\n            \"idAreaAviso\": \"AOC\",\n            \"idConcelho\": 2,\n            \"globalIdLocal\": 3480200,\n            \"latitude\": \"39.4500\",\n            \"idDistrito\": 48,\n            \"local\": \"Santa Cruz das Flores\",\n            \"longitude\": \"-31.1300\"\n        },\n        {\n            \"idRegiao\": 3,\n            \"idAreaAviso\": \"AOC\",\n            \"idConcelho\": 1,\n            \"globalIdLocal\": 3490100,\n            \"latitude\": \"39.6700\",\n            \"idDistrito\": 49,\n            \"local\": \"Vila do Corvo\",\n            \"longitude\": \"-31.1200\"\n        }\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.ipma.pt/open-data/distrits-islands.json",
+          "protocol": "https",
+          "host": [
+            "api",
+            "ipma",
+            "pt"
+          ],
+          "path": [
+            "open-data",
+            "distrits-islands.json"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Previsão do tempo por cidade Lisboa",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json",
+          "protocol": "https",
+          "host": [
+            "api",
+            "ipma",
+            "pt"
+          ],
+          "path": [
+            "open-data",
+            "forecast",
+            "meteorology",
+            "cities",
+            "daily",
+            "1110600.json"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Previsão de tempo cidade inválida",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/99999999.json",
+          "protocol": "https",
+          "host": [
+            "api",
+            "ipma",
+            "pt"
+          ],
+          "path": [
+            "open-data",
+            "forecast",
+            "meteorology",
+            "cities",
+            "daily",
+            "99999999.json"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Método errado",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json",
+          "protocol": "https",
+          "host": [
+            "api",
+            "ipma",
+            "pt"
+          ],
+          "path": [
+            "open-data",
+            "forecast",
+            "meteorology",
+            "cities",
+            "daily",
+            "1110600.json"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
