@@ -42,6 +42,7 @@ Base URL: https://api.ipma.pt
 
 ## 📁 Estrutura do Projeto
 
+
 qa-ipma-api-testing/
 │
 ├── README.md
@@ -53,6 +54,7 @@ qa-ipma-api-testing/
 │
 └── postman/
 └── IPMA_Postman_Collection.json
+
 
 
 ---
