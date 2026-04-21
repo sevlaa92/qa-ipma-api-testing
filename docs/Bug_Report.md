@@ -1,4 +1,4 @@
-# 🐞 Bug Report – IPMA API
+# Bug Report – IPMA API
 
 ## Status Geral
 Durante a execução dos testes básicos definidos neste projeto, **nenhum bug crítico foi identificado** nos endpoints testados.
