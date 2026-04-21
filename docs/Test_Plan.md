@@ -1,4 +1,4 @@
-# 📋 Test Plan – IPMA API
+# Test Plan – IPMA API
 
 ## Objetivo
 Definir a abordagem de testes para validar os principais endpoints da API pública do IPMA, garantindo que a API responde corretamente e retorna dados estruturados.
