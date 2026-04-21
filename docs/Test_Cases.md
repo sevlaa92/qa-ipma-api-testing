@@ -1,4 +1,4 @@
-# 🧪 Test Cases – IPMA API
+# Test Cases – IPMA API
 
 ## TC_API_001 – Lista de Localidades
 **Descrição:** Validar se a API retorna a lista de localidades corretamente.  
